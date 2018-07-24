@@ -47,9 +47,9 @@ int myOtsu(Mat & src)
 		deltaTmp = (float)(w0 *w1* pow((u0 - u1), 2)); //类间方差公式 g = w1 * w2 * (u1 - u2) ^ 2
 		if(deltaTmp > deltaMax)  
 		{  
-             deltaMax = deltaTmp;  
-             th = i;  
-        }  
+		     deltaMax = deltaTmp;  
+		     th = i;  
+	  	}  
 	}
 	return th;
 }
@@ -73,18 +73,18 @@ int main()
 		my_th = myOtsu(src);
 		threshold(src,my_dst,my_th,255,CV_THRESH_BINARY);
 	}
-    long my_finish = clock();   //结束时间
-    long my_t = my_finish-my_start;
-    printf("The run time is:%9.3lf\n", my_t, "ms!\n"); //输出时间
+ 	long my_finish = clock();   //结束时间
+ 	long my_t = my_finish-my_start;
+    	printf("The run time is:%9.3lf\n", my_t, "ms!\n"); //输出时间
 	cout << "myOtsu threshold >> " << my_th << endl;
 	
 	long otsu_start = clock();  //开始时间
-    {
+	{
 		th = threshold(src,otsu_dst,0,255,CV_THRESH_OTSU);
-    }
-    long otsu_finish = clock();   //结束时间
-    long t = my_finish-my_start;
-    printf("The run time is:%9.3lf\n", t, "ms!\n"); //输出时间
+    	}
+ 	long otsu_finish = clock();   //结束时间
+	long t = my_finish-my_start;
+	printf("The run time is:%9.3lf\n", t, "ms!\n"); //输出时间
 	cout << "Otsu threshold >> " << th << endl;
 
 	subtract(otsu_dst,my_dst,sub);//两图像相减
