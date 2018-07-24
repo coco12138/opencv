@@ -69,10 +69,10 @@ int main()
 
 	/*计算开销时间，对比两个算法效率*/
 	long my_start = clock();  //开始时间
-    {
+	{
 		my_th = myOtsu(src);
 		threshold(src,my_dst,my_th,255,CV_THRESH_BINARY);
-    }
+	}
     long my_finish = clock();   //结束时间
     long my_t = my_finish-my_start;
     printf("The run time is:%9.3lf\n", my_t, "ms!\n"); //输出时间
