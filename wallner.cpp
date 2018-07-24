@@ -2,12 +2,7 @@
 #include<iostream>
 using namespace std;
 using namespace cv;
-typedef struct SmaxValue
-{
-	int nValue;
-	int nDist;
-	int nAngle;
-}SMaxValue;
+
 void wallner(Mat & src, Mat & dst)
 {
 	/*
